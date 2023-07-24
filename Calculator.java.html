@@ -1,70 +1,51 @@
-<html>
-<head>
-<title>Calculator.java</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-.s0 { color: #cc7832;}
-.s1 { color: #a9b7c6;}
-.s2 { color: #6897bb;}
-.s3 { color: #6a8759;}
-</style>
-</head>
-<body bgcolor="#2b2b2b">
-<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
-<tr><td><center>
-<font face="Arial, Helvetica" color="#000000">
-Calculator.java</font>
-</center></td></tr></table>
-<pre><span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+import java.util.Scanner;
 
-<span class="s0">public class </span><span class="s1">Calculator {</span>
-    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
-        <span class="s1">Scanner Enter = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
-        <span class="s1">var a = </span><span class="s2">0</span><span class="s0">;</span>
-        <span class="s1">var b = </span><span class="s2">0</span><span class="s0">;</span>
-        <span class="s1">String Action1 = </span><span class="s3">&quot;&quot;</span><span class="s0">;</span>
-        <span class="s0">do </span><span class="s1">{</span>
-            <span class="s1">String input = Enter.nextLine()</span><span class="s0">;</span>
-            <span class="s0">if </span><span class="s1">(input.equals(</span><span class="s3">&quot;&quot;</span><span class="s1">)) {</span>
-                <span class="s0">break;</span>
-            <span class="s1">}</span>
-            <span class="s1">String[] strings = input.trim().split(</span><span class="s3">&quot;</span><span class="s0">\\</span><span class="s3">s+&quot;</span><span class="s1">)</span><span class="s0">;</span>
-            <span class="s0">if </span><span class="s1">(strings.length != </span><span class="s2">3</span><span class="s1">) {</span>
-                <span class="s1">System.out.println(</span><span class="s3">&quot;Ошибка&quot; </span><span class="s1">+ </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s1">+ </span><span class="s3">&quot;Не соответствует условиям ввода&quot;</span><span class="s1">)</span><span class="s0">;</span>
-                <span class="s0">continue;</span>
-            <span class="s1">}</span>
-            <span class="s0">try </span><span class="s1">{</span>
-                <span class="s1">a = Integer.parseInt(strings[</span><span class="s2">0</span><span class="s1">])</span><span class="s0">;</span>
-                <span class="s1">b = Integer.parseInt(strings[</span><span class="s2">2</span><span class="s1">])</span><span class="s0">;</span>
-                <span class="s1">Action1 = strings[</span><span class="s2">1</span><span class="s1">]</span><span class="s0">;</span>
-                <span class="s0">if </span><span class="s1">(!Action1.matches(</span><span class="s3">&quot;[+ * / -]&quot;</span><span class="s1">)) {</span>
-                    <span class="s1">System.out.println(</span><span class="s3">&quot;Ошибка&quot; </span><span class="s1">+ </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s1">+ </span><span class="s3">&quot;Не соответствуеЕЕЕт условиям ввода&quot;</span><span class="s1">)</span><span class="s0">;</span>
-                    <span class="s0">continue;</span>
-                <span class="s1">}</span>
-                <span class="s0">if </span><span class="s1">(a &gt; </span><span class="s2">10 </span><span class="s1">|| b &gt; </span><span class="s2">10 </span><span class="s1">|| a &lt; </span><span class="s2">0 </span><span class="s1">|| b &lt; </span><span class="s2">0</span><span class="s1">){</span>
-                    <span class="s1">System.out.println(</span><span class="s3">&quot;Ошибка&quot; </span><span class="s1">+ </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s1">+ </span><span class="s3">&quot;Не соответствует условиям ввода&quot;</span><span class="s1">)</span><span class="s0">;</span>
-                    <span class="s0">continue;</span>
-                <span class="s1">}</span>
-                <span class="s1">System.out.println(</span><span class="s3">&quot;Результат:&quot; </span><span class="s1">+ </span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s1">+ Action(a</span><span class="s0">, </span><span class="s1">b</span><span class="s0">, </span><span class="s1">Action1))</span><span class="s0">;</span>
-            <span class="s1">} </span><span class="s0">catch </span><span class="s1">(Exception e) {</span>
-                <span class="s1">System.out.println(</span><span class="s3">&quot;Ошибка&quot;</span><span class="s1">)</span><span class="s0">;</span>
-            <span class="s1">}</span>
-        <span class="s1">} </span><span class="s0">while </span><span class="s1">(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span>
-    <span class="s1">}</span>
-    <span class="s0">private static int </span><span class="s1">Action(</span><span class="s0">int </span><span class="s1">a</span><span class="s0">, int </span><span class="s1">b</span><span class="s0">, </span><span class="s1">String Action1) {</span>
-        <span class="s0">switch </span><span class="s1">(Action1) {</span>
-            <span class="s0">case </span><span class="s3">&quot;*&quot;</span><span class="s1">:</span>
-                <span class="s0">return </span><span class="s1">a*b</span><span class="s0">;</span>
-            <span class="s0">case </span><span class="s3">&quot;+&quot;</span><span class="s1">:</span>
-                <span class="s0">return </span><span class="s1">a+b</span><span class="s0">;</span>
-            <span class="s0">case </span><span class="s3">&quot;-&quot;</span><span class="s1">:</span>
-                <span class="s0">return </span><span class="s1">a-b</span><span class="s0">;</span>
-            <span class="s0">case </span><span class="s3">&quot;/&quot;</span><span class="s1">:</span>
-                <span class="s0">return </span><span class="s1">a/b</span><span class="s0">;</span>
-            <span class="s0">default</span><span class="s1">:</span>
-                <span class="s0">throw new </span><span class="s1">IllegalArgumentException(</span><span class="s3">&quot;Ошибка ввода&quot;</span><span class="s1">)</span><span class="s0">;</span>
-        <span class="s1">}</span>
-    <span class="s1">}</span>
-<span class="s1">}</span></pre>
-</body>
-</html>
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner Enter = new Scanner(System.in);
+        var a = 0;
+        var b = 0;
+        String Action1 = "";
+        do {
+            String input = Enter.nextLine();
+            if (input.equals("")) {
+                break;
+            }
+            String[] strings = input.trim().split("\\s+");
+            if (strings.length != 3) {
+                System.out.println("Ошибка" + "\n" + "Не соответствует условиям ввода");
+                continue;
+            }да в
+            try {
+                a = Integer.parseInt(strings[0]);
+                b = Integer.parseInt(strings[2]);
+                Action1 = strings[1];
+                if (!Action1.matches("[+ * / -]")) {
+                    System.out.println("Ошибка" + "\n" + "Не соответствуеЕЕЕт условиям ввода");
+                    continue;
+                }
+                if (a > 10 || b > 10 || a < 0 || b < 0){
+                    System.out.println("Ошибка" + "\n" + "Не соответствует условиям ввода");
+                    continue;
+                }
+                System.out.println("Результат:" + "\n" + Action(a, b, Action1));
+            } catch (Exception e) {
+                System.out.println("Ошибка");
+            }
+        } while (true);
+    }
+    private static int Action(int a, int b, String Action1) {
+        switch (Action1) {
+            case "*":
+                return a*b;
+            case "+":
+                return a+b;
+            case "-":
+                return a-b;
+            case "/":
+                return a/b;
+            default:
+                throw new IllegalArgumentException("Ошибка ввода");
+        }
+    }
+}
